@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/first_list"
+    <include layout="@layout/marten_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_base"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@color/teal_200"
-        android:dividerHeight="1dp"
-        android:scrollbars="none" />
+        android:orientation="vertical" />
 
 </LinearLayout>

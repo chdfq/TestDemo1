@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">TestDemo</string>
+    <string name="today">今天是12/11撒大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大啊大大是</string>
+    <string name="tomorrow">明天是12/12</string>
+    <string name="first_hint">请输入姓名</string>
+    <string name="main_page">首页</string>
+    <string name="bit_qr">你点击了扫一扫</string>
+    <string name="bit_back">你点击了返回键</string>
+    <string name="bit_message">你点击了消息</string>
+    <string name="error_message">违规操作</string>
+    <string name="first_activity">第一个Activity</string>
 </resources>
