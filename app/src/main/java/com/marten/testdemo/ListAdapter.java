@@ -13,22 +13,31 @@ import java.util.List;
 public class ListAdapter extends BaseAdapter {
 
     private Context context;
-    private List<String> list = new ArrayList<>();
+    private List<String> myData = new ArrayList<>();
 
 
     public ListAdapter(Context context, List<String> list) {
         this.context = context;
-        this.list = list;
+        this.myData = list;
+    }
+
+    public void addAllData(List<String> newData) {
+        if (myData != null && newData != null) {
+            //拼接
+            myData.addAll(newData);
+            //刷新
+            notifyDataSetChanged();
+        }
     }
 
     @Override
     public int getCount() {
-        return list.size();
+        return myData.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return list.get(position);
+        return myData.get(position);
     }
 
     @Override
@@ -50,7 +59,7 @@ public class ListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        String str = list.get(position);
+        String str = myData.get(position);
         viewHolder.mTvText.setText(str);
 
         return view;

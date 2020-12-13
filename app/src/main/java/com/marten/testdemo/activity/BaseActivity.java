@@ -26,7 +26,6 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     private Context context;
     private String title;
 
-
     public void setTitle(String title) {
         this.title = title;
         if (title != null) {
@@ -41,9 +40,9 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
         context = BaseActivity.this;
         llbase = findViewById(id.ll_base);
         mTvTitle = findViewById(id.title);
-        mTvMessage = findViewById(id.message);
+        mTvMessage = findViewById(id.right_text1);
         mIvBack = findViewById(id.back_img);
-        mIvQR = findViewById(id.qr_image);
+        mIvQR = findViewById(id.right_image1);
         initView();
         mIvQR.setOnClickListener(this);
         mIvBack.setOnClickListener(this);
@@ -62,7 +61,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.qr_image:
+            case id.right_image1:
                 Toast.makeText(context, string.bit_qr, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.back_img:
