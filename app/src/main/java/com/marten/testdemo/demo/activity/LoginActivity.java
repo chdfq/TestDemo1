@@ -47,6 +47,9 @@ public class LoginActivity extends BaseActivity {
                 }
                 if (account.equals(account2) && password.equals(password2)) {
                     Toast.makeText(context, R.string.login_success, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(context, R.string.login_fail, Toast.LENGTH_SHORT).show();
                     return;
