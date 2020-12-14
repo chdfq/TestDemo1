@@ -1,6 +1,8 @@
 package com.marten.testdemo.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -55,6 +57,13 @@ public class SecondActivity extends AppCompatActivity {
 
         listAdapter = new ListAdapter(SecondActivity.this, data);
         mLvFirst.setAdapter(listAdapter);
+
+        mLvFirst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
 
     public void addData(int action) {

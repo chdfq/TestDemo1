@@ -18,6 +18,12 @@ public class FirstRecyclerViewAdapter extends RecyclerView.Adapter<FirstRecycler
 
     private Context context;
     private List<String> data = new ArrayList<>();
+    private ItemOnClickListener listener;
+
+    public void setListener(ItemOnClickListener listener) {
+        this.listener = listener;
+    }
+
 
     public FirstRecyclerViewAdapter(Context context, List<String> data) {
         this.context = context;
@@ -35,6 +41,12 @@ public class FirstRecyclerViewAdapter extends RecyclerView.Adapter<FirstRecycler
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         //((TextView)holder.itemView).setText();
         holder.mTvItem.setText(data.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(position, data.get(position));
+            }
+        });
     }
 
     @Override
@@ -42,7 +54,7 @@ public class FirstRecyclerViewAdapter extends RecyclerView.Adapter<FirstRecycler
         return data.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mTvItem;
 
@@ -50,5 +62,9 @@ public class FirstRecyclerViewAdapter extends RecyclerView.Adapter<FirstRecycler
             super(itemView);
             mTvItem = itemView.findViewById(R.id.text_item);
         }
+    }
+
+    public interface ItemOnClickListener {
+        void onClick(int position, String string);
     }
 }

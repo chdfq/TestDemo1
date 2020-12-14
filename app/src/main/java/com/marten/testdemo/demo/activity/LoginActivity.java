@@ -31,6 +31,8 @@ public class LoginActivity extends BaseActivity {
         mBtnLogin = findViewById(R.id.btn_login);
         mEtAccount = findViewById(R.id.et_account);
         mEtPassword = findViewById(R.id.et_password);
+        mEtAccount.setText(account);
+        mEtPassword.setText(password);
 
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
